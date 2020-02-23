@@ -1,8 +1,8 @@
-# gulp-htmltoreact
+# gulp-htmltoreactclass
 
 Converts html content to react classes.
 
-Install via npm: `npm i gulp-htmltoreact`
+Install via npm: `npm i gulp-htmltoreactclass`
 
 ## Use:
 ```
