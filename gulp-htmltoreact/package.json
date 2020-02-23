@@ -1,7 +1,7 @@
 {
-  "name": "gulp-htmltoreact",
+  "name": "gulp-htmltoreactclass",
   "version": "1.0.0",
-  "description": "Wraps piped html files in a React class",
+  "description": "Wraps html files in a React class via gulp '.pipe()'",
   "main": "index.js",
   "scripts": {
     "test": "cd test && gulp test"
