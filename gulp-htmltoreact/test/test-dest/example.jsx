@@ -1,7 +1,14 @@
-export class Example extends React.Component{
-        constructor(props){ super(props);} 
-        render(){
-            return  <div>
+import React from 'react';
+
+export class Example extends React.Component {
+
+    constructor(props){
+        super(props);
+    } 
+
+    render() {
+        return (
+<div>
 <h1 id="project-1">Project 1</h1>
 <p><img src="./media/test.png" alt="test image"/></p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim tincidunt velit interdum suscipit. Sed tempor fringilla sem, id feugiat magna ultrices quis. In vestibulum vel augue a sodales. Ut massa leo, faucibus eget mattis quis, sagittis ut lectus. Aenean et lorem ipsum. Maecenas consectetur mauris odio, congue commodo ligula aliquet et. Morbi rhoncus interdum justo. Nullam commodo volutpat aliquet. Aliquam lacinia ipsum non orci interdum, eget scelerisque neque ornare. Pellentesque cursus odio vitae ultricies convallis. Morbi non pulvinar enim. Mauris molestie velit ac maximus mollis. Aenean eget ipsum vel tellus maximus semper vitae a tellus. Integer maximus placerat est vel volutpat. Fusce nulla ex, bibendum vitae lacus sed, malesuada rutrum dui.</p>
@@ -11,6 +18,7 @@ export class Example extends React.Component{
 <h3 id="subtitle">Subtitle</h3>
 <p>Integer tincidunt nunc id mauris facilisis, eu vehicula enim sollicitudin. Aenean risus nulla, commodo id interdum eget, dapibus vel augue. Nullam ullamcorper luctus mauris a pellentesque. Fusce mollis augue vel mauris ultricies, sed scelerisque libero gravida. Donec neque arcu, laoreet quis accumsan ornare, pretium a massa. Vestibulum sapien elit, mattis eu lectus in, consequat pulvinar nulla. Nulla vitae cursus ipsum, in fermentum massa. Duis condimentum leo tempus, pharetra est eu, commodo sapien. Praesent elementum vulputate lacus, vitae dapibus tortor fermentum vel. Nam at lobortis massa. Sed quis nibh non enim scelerisque euismod. Quisque rutrum aliquet ante. Duis eget orci ante. Donec fringilla lorem justo, id semper dolor lobortis eu.</p>
 <p>Fusce molestie leo diam, ac aliquam neque dictum rhoncus. Mauris a scelerisque magna, ac gravida nisl. Proin ultricies, purus sit amet faucibus placerat, urna metus vestibulum orci, et sagittis dui neque eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec dui nec velit luctus iaculis eget in mauris. Donec ultricies nisl eget est cursus, mattis vulputate leo sollicitudin. Pellentesque nisi turpis, condimentum consectetur quam et, scelerisque semper neque. Nam sit amet ex fringilla, tincidunt urna pellentesque, egestas quam. Sed finibus orci eros, id bibendum nisi fermentum interdum. Quisque a erat sit amet urna condimentum luctus vitae vel sem. In efficitur nibh non suscipit malesuada. Nunc at tempus erat. Fusce condimentum nunc ac eleifend mattis.</p>
-                    </div>
+</div>
+        );
     }
 }
