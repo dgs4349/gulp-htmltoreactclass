@@ -1,10 +1,11 @@
 {
   "name": "gulp-htmltoreactclass",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Wraps html files in a React class via gulp '.pipe()'",
   "main": "index.js",
   "scripts": {
-    "test": "cd test && gulp test"
+    "test": "cd test && gulp test",
+    "updateSuccess": "cd test && gulp copy"
   },
   "author": "Davis Smith",
   "license": "ISC",
