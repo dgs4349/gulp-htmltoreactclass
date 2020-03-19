@@ -3,16 +3,24 @@ var PluginError = require("plugin-error");
 
 function cap(str) { return str.charAt(0).toUpperCase() + str.substring(1); }
 
-function createReactClass(name){
-    return `export class ${cap(name)} extends React.Component{
-        constructor(props){ super(props);} 
-        render(){
-            return  <div>
+function createReactClass(name) {
+    return `import React from 'react';
+
+export class ${cap(name)} extends React.Component {
+
+    constructor(props){
+        super(props);
+    } 
+
+    render() {
+        return (
+<div>
 `;
 }
 
 const endReactClass = `
-                    </div>
+</div>
+        );
     }
 }`;
 
