@@ -43,8 +43,30 @@ function compare(done) {
     done();
 }
 
+
+
+
 gulp.task("test", gulp.series(clean, transform, compare));
 
+
+function mediaTransform() {
+    return gulp.src("./example.html")
+        .pipe(htmltoreact({unloadMedia: true}))
+        .pipe(rename('example-media.jsx'))
+        .pipe(gulp.dest("./test-dest/"));
+}
+
+function mediaCompare(done) {
+    gulp.src("./test-dest/example-media.jsx")
+    .pipe(
+        contentequals("./success-media.jsx",
+            ()=>logSuccess("Test passed! HTML converted as expected.",),
+            ()=>logFail(generalFail)
+        ));
+    done();
+}
+
+gulp.task("media-test", gulp.series(clean, mediaTransform, mediaCompare));
 
 const generalFail = `
 Test failed! Test file contents do not match the contents of the specified success result!
@@ -52,7 +74,7 @@ Check the differences between the test file 'test/test-dest/example.jsx' with it
 
 If new desired behavior has been added and the test should have succeeded:
     - rename example.jsx, move and override the sucess.jsx file OR
-    - 'gulp copy' to override succes.jsx automatically `;
+    - 'gulp copy' to override succes.jsx automatically (or gulp media-copy for media-test)`;
 
 
 
@@ -113,3 +135,15 @@ function copy(done) {
     done();
 }
 gulp.task("copy", copy);
+
+const mediaCopyFrom = "./test-dest/example-media.jsx";
+const mediaCopyToName = "success-media.jsx";
+
+function mediaCopy(done) {
+    gulp.src(mediaCopyFrom)
+        .pipe(rename(mediaCopyToName))
+        .pipe(gulp.dest(copyToDirectory));
+    done();
+}
+gulp.task("media-copy", mediaCopy);
+

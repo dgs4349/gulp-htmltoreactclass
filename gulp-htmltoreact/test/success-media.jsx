@@ -1,11 +1,25 @@
 import React from 'react';
 
 export default class Example extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.ref = React.createRef();
+    }
+
+    loadMedia() {
+        if(this.ref.current) {
+            this.ref.current.querySelectorAll(['data-src']).forEach(e => {
+                e.src = e['data-src'];
+            });
+        }
+    }
+
     render() {
         return (
-<div>
+<div ref={this.ref} loadable-media-container>
 <h1 id="project-1">Project 1</h1>
-<p><img src="./media/test.png" alt="test image"/></p>
+<p><img src="" data-src="./media/test.png" alt="test image"/></p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim tincidunt velit interdum suscipit. Sed tempor fringilla sem, id feugiat magna ultrices quis. In vestibulum vel augue a sodales. Ut massa leo, faucibus eget mattis quis, sagittis ut lectus. Aenean et lorem ipsum. Maecenas consectetur mauris odio, congue commodo ligula aliquet et. Morbi rhoncus interdum justo. Nullam commodo volutpat aliquet. Aliquam lacinia ipsum non orci interdum, eget scelerisque neque ornare. Pellentesque cursus odio vitae ultricies convallis. Morbi non pulvinar enim. Mauris molestie velit ac maximus mollis. Aenean eget ipsum vel tellus maximus semper vitae a tellus. Integer maximus placerat est vel volutpat. Fusce nulla ex, bibendum vitae lacus sed, malesuada rutrum dui.</p>
 <h2 id="section-title">Section Title</h2>
 <p>Integer eget lacus eros. Nulla ut dui vehicula, mattis sapien ac, pretium turpis. Curabitur at fringilla orci, at interdum dui. Nulla fringilla, est ut gravida scelerisque, dolor nisl pretium turpis, nec fermentum sem urna vel nisl. Quisque lacinia consectetur erat a eleifend. Aliquam orci nulla, cursus at urna et, pellentesque consectetur eros. Aenean sodales ante in porttitor scelerisque. Nam sit amet mi aliquam, viverra urna id, placerat nulla. Nunc non ipsum vel nisi mollis mattis non vitae massa.</p>
